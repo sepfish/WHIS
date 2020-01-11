@@ -3,6 +3,9 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 public class Whis {
+	
+	//some rules: https://docs.google.com/document/d/1cKNVRTGJQXgCbnonNO15KXamzqFZnuiTU9MxhltwU88/edit
+	
 	JFrame frame;
 	GamePanel gamePanel;
 	static final int width = 500;
@@ -20,6 +23,7 @@ public class Whis {
 		frame.getContentPane().setPreferredSize(new Dimension(width, height));
         frame.pack();
         frame.addKeyListener(gamePanel);
+        frame.setVisible(true);
         gamePanel.startGame();
 	}
 	
