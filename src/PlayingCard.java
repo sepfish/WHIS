@@ -19,6 +19,10 @@ public class PlayingCard extends GameObject {
 	 * fire -> wind - 3
 	 * wind -> water - 3
 	 */
+	enum Type {
+		FIRE_NORMAL, FIRE_DOUBLE, FIRE_DRAW2, WIND_NORMAL, WIND_REVERSE, WIND_DRAW2, WATER_NORMAL, WATER_CHANGE, WATER_DRAW2, LIGHT, DARK, WATER_FIRE, FIRE_WIND, WIND_WATER
+	//fix enum here: http://tutorials.jenkov.com/java/enums.html
+	}
 
 	PlayingCard(int x, int y, int width, int height, String type) {
 		super(x, y, width, height, Color.GREEN);
