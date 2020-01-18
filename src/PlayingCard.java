@@ -2,7 +2,7 @@ import java.awt.Color;
 
 public class PlayingCard extends GameObject {
 	
-	String type;
+	Type type;
 	/*types of cards:
 	 * fire normal - 5
 	 * fire double - 4
@@ -20,11 +20,30 @@ public class PlayingCard extends GameObject {
 	 * wind -> water - 3
 	 */
 	enum Type {
-		FIRE_NORMAL, FIRE_DOUBLE, FIRE_DRAW2, WIND_NORMAL, WIND_REVERSE, WIND_DRAW2, WATER_NORMAL, WATER_CHANGE, WATER_DRAW2, LIGHT, DARK, WATER_FIRE, FIRE_WIND, WIND_WATER
-	//fix enum here: http://tutorials.jenkov.com/java/enums.html
+		FIRE_NORMAL (2), 
+		FIRE_DOUBLE (1), 
+		FIRE_DRAW2 (5), 
+		WIND_NORMAL (2), 
+		WIND_REVERSE (1), 
+		WIND_DRAW2 (5), 
+		WATER_NORMAL (2), 
+		WATER_CHANGE (1), 
+		WATER_DRAW2 (5), 
+		LIGHT (1), //light and dark cards double the score
+		DARK (1), 
+		WATER_FIRE (1), 
+		FIRE_WIND (1), 
+		WIND_WATER (1)
+		;
+		
+		private final int score;
+		
+		private Type(int s) {
+			score = s;
+		}
 	}
 
-	PlayingCard(int x, int y, int width, int height, String type) {
+	PlayingCard(int x, int y, int width, int height, Type type) {
 		super(x, y, width, height, Color.GREEN);
 		// TODO Auto-generated constructor stub
 		type = this.type;
